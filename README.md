@@ -55,6 +55,8 @@ Run the following command to recursively `pip install` every package in the file
 
 ## Start a new project
 
+Follow the below and [The Django Tutorial](https://docs.djangoproject.com/en/1.9/intro/tutorial01/) which has a lot more details on every step.
+
     django-admin.py startproject tangeneer . 
     
 > tangeneer all lowercase
