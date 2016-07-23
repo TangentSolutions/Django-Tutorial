@@ -1,1 +1,4 @@
-Django
+django==1.9
+psycopg2
+djangorestframework==3.3.3
+django-rest-swagger
