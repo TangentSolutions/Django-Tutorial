@@ -1,0 +1,6 @@
+{
+  "name": "Django-tutorial",
+  "tagline": "A quick introduction and tutorial on Django setup and a basic application",
+  "body": "### Django Basics\r\n\r\n1. [[Setup Environment]]  \r\n1. [[Start new Project]]  \r\n1. [[Write first View]]\r\n1. [[Using Templates]]\r\n1. [[Setup Models]]\r\n1. [[Setup Admin]]\r\n1. [[Import Export Data]]\r\n\r\n### Django Rest Framework (DRF)\r\n\r\n1. [[Install DRF]]\r\n1. [[Add First Views for Authentication]]\r\n\r\n",
+  "note": "Don't delete this file! It's used internally to help with page regeneration."
+}
