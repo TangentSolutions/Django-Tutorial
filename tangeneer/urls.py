@@ -21,6 +21,9 @@ from hr import views
 router = routers.DefaultRouter()
 router.register(r'users', views.UserViewSet)
 router.register(r'groups', views.GroupViewSet)
+router.register(r'tasks', views.TaskViewSet)
+#router.register(r'skills', views.SkillViewSet)
+#router.register(r'jobs', views.JobViewSet)
 
 urlpatterns = [
 	url(r'^hr/', include('hr.urls')),
