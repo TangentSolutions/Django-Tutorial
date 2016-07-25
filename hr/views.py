@@ -4,6 +4,7 @@ from django.shortcuts import render
 from django.contrib.auth.models import User, Group
 from rest_framework import viewsets
 from serializers import *
+from models import *
 
 def index(request):
 	return HttpResponse("Hello Tangeneers!")
@@ -43,4 +44,16 @@ class TaskViewSet(viewsets.ModelViewSet):
     queryset = Task.objects.all()
     serializer_class = TaskSerializer
 
+class SkillViewSet(viewsets.ModelViewSet):
+    """
+    API endpoint that allows tasks to be viewed or edited.
+    """
+    queryset = Skill.objects.all()
+    serializer_class = SkillSerializer
 
+class JobViewSet(viewsets.ModelViewSet):
+    """
+    API endpoint that allows tasks to be viewed or edited.
+    """
+    queryset = Job.objects.all()
+    serializer_class = JobSerializer
