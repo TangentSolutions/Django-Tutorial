@@ -1,26 +1,32 @@
 from django.http import HttpResponse
 import datetime
 from django.shortcuts import render
-from django.contrib.auth.models import User, Group
 from rest_framework import viewsets
-from serializers import *
-from models import *
+from hr.serializers import *
 
-def index(request):
-	return HttpResponse("Hello Tangeneers!")
+class JobViewSet(viewsets.ModelViewSet):
+    """
+    API endpoint that allows tasks to be viewed or edited.
+    """
+    queryset = Job.objects.all()
+    serializer_class = JobSerializer
+ 
 
-def current_datetime(request):
-	now = datetime.datetime.now()
-	html = "<html><body>It is now %s.</body></html>" % now
-	return HttpResponse(html)
+class TaskViewSet(viewsets.ModelViewSet):
+    """
+    API endpoint that allows tasks to be viewed or edited.
+    """
+    queryset = Task.objects.all()
+    serializer_class = TaskSerializer
 
-def detail(request, tangeneer_id):
 
-	template = "hr/detail.html"
+class SkillViewSet(viewsets.ModelViewSet):
+    """
+    API endpoint that allows skills to be viewed or edited.
+    """
+    queryset = Skill.objects.all()
+    serializer_class = SkillSerializer
 
-	context = {'tangeneer': 'Someones details'}
-
-	return render(request, template, context)
 
 class UserViewSet(viewsets.ModelViewSet):
     """
@@ -36,24 +42,3 @@ class GroupViewSet(viewsets.ModelViewSet):
     """
     queryset = Group.objects.all()
     serializer_class = GroupSerializer
-
-class TaskViewSet(viewsets.ModelViewSet):
-    """
-    API endpoint that allows tasks to be viewed or edited.
-    """
-    queryset = Task.objects.all()
-    serializer_class = TaskSerializer
-
-class SkillViewSet(viewsets.ModelViewSet):
-    """
-    API endpoint that allows tasks to be viewed or edited.
-    """
-    queryset = Skill.objects.all()
-    serializer_class = SkillSerializer
-
-class JobViewSet(viewsets.ModelViewSet):
-    """
-    API endpoint that allows tasks to be viewed or edited.
-    """
-    queryset = Job.objects.all()
-    serializer_class = JobSerializer

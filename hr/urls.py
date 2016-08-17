@@ -1,10 +1,17 @@
-from django.conf.urls import url
+from django.conf.urls import include, url
+from django.contrib import admin
+from rest_framework import routers
+from hr import views
 
-from . import views
+router = routers.DefaultRouter()
+
+router.register(r'jobs', views.JobViewSet)
+router.register(r'tasks', views.TaskViewSet)
+router.register(r'skills', views.SkillViewSet)
+router.register(r'users', views.UserViewSet)
+router.register(r'groups', views.GroupViewSet)
+
 
 urlpatterns = [
-	url(r'^$', views.index, name='index'),
-	url(r'^datetime/$', views.current_datetime, name='current_datetime'),
-	# ex: /hr/5/
-    url(r'^(?P<tangeneer_id>[0-9]+)/$', views.detail, name='detail'),
+    url(r'^', include(router.urls))
 ]

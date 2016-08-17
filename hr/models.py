@@ -10,6 +10,7 @@ CATEGORY_CHOICES = (
 	('hr', 'HR Consultant'),
 )
 
+
 class Task(models.Model):
 	title = models.CharField(max_length=100, db_index=True)
 	due_date = models.DateTimeField('Due Date')
@@ -17,11 +18,13 @@ class Task(models.Model):
 	def __unicode__(self):
 		return '%s' % self.title
 
+
 class Skill(models.Model):
 	title = models.CharField(max_length=100, db_index=True)
 
 	def __unicode__(self):
 		return '%s' % self.title
+
 
 class Job(models.Model):
 	title = models.CharField(max_length=100, db_index=True)
